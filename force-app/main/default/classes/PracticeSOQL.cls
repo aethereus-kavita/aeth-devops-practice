@@ -15,4 +15,11 @@ public with sharing class PracticeSOQL {
             }
         }   
     }
+    public static Contact queryContactByEmailAddress(String email) { 
+
+        Contact c = [SELECT Id, FirstName, LastName, Email FROM Contact WHERE Email = :email LIMIT 1]; 
+        
+        return c; 
+        
+        } 
 }
