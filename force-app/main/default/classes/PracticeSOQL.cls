@@ -2,8 +2,8 @@
  * @description       : 
  * @author            : RISHAB GOYAL
  * @group             : 
- * @last modified on  : 04-08-2024
- * @last modified by  : RISHAB GOYAL
+ * @last modified on  : 04-12-2024
+ * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
 public with sharing class PracticeSOQL {
     public static void PracticeSOQL() {
@@ -14,5 +14,10 @@ public with sharing class PracticeSOQL {
                 System.debug('Contact Last Name: ' + c.LastName);
             }
         }   
+    }
+    
+    public static Contact queryContactByEmailAddress(String email) {
+       Contact c = [SELECT Id, FirstName, LastName, Email FROM Contact WHERE Email = :email LIMIT 1];
+       return c;
     }
 }
